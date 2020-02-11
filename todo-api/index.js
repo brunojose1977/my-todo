@@ -171,4 +171,3 @@ app.route('/api/v1/search').post(async (req, res) => {
 app.listen(port, () => {
     console.log('Todo API Server started!');
 });
-
