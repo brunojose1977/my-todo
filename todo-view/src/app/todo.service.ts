@@ -3,7 +3,9 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Todo } from './todo';
 
-const BASE_PATH = '/local_server/api/v1';
+// usado quando implementamos o proxy interno "local server" no AngularJS
+//const BASE_PATH = '/local_server/api/v1';
+const BASE_PATH = '/api/v1';
 
 @Injectable()
 export class TodoService {
