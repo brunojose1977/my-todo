@@ -1,8 +1,10 @@
 upstream client{
+    //server todo-view:4200;
     server localhost:4200;
 }
 
 upstream api{
+    //server todo-api:3000;
     server localhost:3000;
 }
 
