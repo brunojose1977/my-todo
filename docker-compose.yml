@@ -24,30 +24,9 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
-    environment:
-      - discovery.type=single-node
+      environment:
+        - discovery.type=single-node
 
-  todo-api:
-    container_name: todo-api
-    image: todo-api:1.0
-    ports:
-      - 300:3000
-    environment:
-      - POSTGRES_HOST=todo-postgres
-      - POSTGRES_PORT=5432
-      - POSTGRES_USER=todo
-      - POSTGRES_PASSWORD=todo123
-      - POSTGRES_DATABASE=todo
-      - REDIS_HOST=todo-redis
-      - REDIS_PORT=6379
-      - ELASTICSEARCH_HOST=todo-elastic
-      - ELASTICSEARCH_PORT=9200
-    volumes:
-      - /app/node_modules
-    depends_on:
-      - todo-redis
-      - todo-postgres
-      - todo-elastic
   todo-view:
     container_name: todo-view
     image: todo-view:1.0
@@ -58,12 +37,3 @@ services:
       - /usr/src/app/node_modules
     depends_on:
       - todo-api
-
-  todo-proxy:
-    container_name: todo-proxy
-    image: todo-proxy:1.0
-    ports:
-      - 8080:8080
-    depends_on:
-      - todo-api
-      - todo-view
