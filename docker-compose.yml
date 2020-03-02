@@ -45,7 +45,7 @@ services:
     volumes:
       - /app/node_modules
     depends_on:
-      - todo_redis
+      - todo-redis
       - todo-postgres
       - todo-elastic
   todo-view:
