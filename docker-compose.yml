@@ -47,7 +47,7 @@ services:
     depends_on:
       - todo_redis
       - todo-postgres
-      - todo_elastic
+      - todo-elastic
   todo-view:
     container_name: todo-view
     image: todo-view:1.0
