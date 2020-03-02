@@ -24,8 +24,8 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
-      environment:
-        - discovery.type=single-node
+    environment:
+      - discovery.type=single-node
 
   todo-api:
     container_name: todo-api
